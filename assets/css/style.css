@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --primary: #FF6B6B; /* Vibrant Coral */
+    --secondary: #4ECDC4; /* Mint */
+    --accent: #FFE66D; /* Sunny Yellow */
+    --dark: #292F36;
+    --light: #F7FFF7;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes blob {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-blob {
+    animation: blob 8s ease-in-out infinite;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Scroll Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.glass-color {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Cards */
+.card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.card-zoom img {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-zoom:hover img {
+    transform: scale(1.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* Minimalist Pattern */
+.bg-dots {
+    background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
+    background-size: 32px 32px;
+    opacity: 0.4;
+}
+
+/* Colorful Abstract Shapes */
+.shape-1 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--primary);
+    filter: blur(100px);
+    opacity: 0.15;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.shape-2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--secondary);
+    filter: blur(120px);
+    opacity: 0.15;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.shape-3 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--accent);
+    filter: blur(90px);
+    opacity: 0.2;
+    border-radius: 50%;
+    z-index: 0;
+}
